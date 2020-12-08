@@ -29,7 +29,7 @@ public class HotelController {
     }
 
     @GetMapping("")
-    public Collection<HotelDTO> findVacantHotels(@RequestParam String city, @RequestParam Date date, @RequestParam int numberOfGuests) {
+    public Collection<HotelDTO> findVacantHotels(@RequestBody String city, Date date, int numberOfGuests) {
         logger.info("findVacantRooms called");
         var vacantHotelsDTO = new VacantHotelsDTO(city, date, numberOfGuests);
         return hotelService.findVacantHotels(vacantHotelsDTO);

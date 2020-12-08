@@ -27,14 +27,14 @@ public class RoomController {
     }
 
     @GetMapping("")
-    public Collection<RoomDTO> findVacantRooms(@RequestParam int hotelNumber, @RequestParam Date date, @RequestParam int numberOfGuests) {
+    public Collection<RoomDTO> findVacantRooms(@RequestBody int hotelNumber, Date date, int numberOfGuests) {
         logger.info("findVacantRooms - called");
         var vacantRoomsDTO = new VacantRoomsDTO(hotelNumber, date, numberOfGuests);
         return roomService.findVacantRooms(vacantRoomsDTO);
     }
 
     @PutMapping("")
-    public boolean markRoomAsReserved(@RequestParam("param") List<String> roomNumber){
+    public boolean markRoomAsReserved(@RequestBody List<String> roomNumber){
         logger.info("markRoomAsReserved - called");
         return roomService.markRoomAsReserved(roomNumber);
     }
