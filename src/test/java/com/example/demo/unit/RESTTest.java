@@ -1,13 +1,8 @@
 package com.example.demo.unit;
 
 
-import com.example.demo.Controller.HotelController;
 import com.example.demo.Service.BookingService;
-import com.example.demo.Service.HotelService;
-import dto.BookingDTO;
 import dto.CreateBookingDTO;
-import dto.RoomBookingDTO;
-import dto.RoomDTO;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -19,14 +14,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.IOException;
-import java.net.http.HttpResponse;
-import java.util.*;
-
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class RESTTest {
