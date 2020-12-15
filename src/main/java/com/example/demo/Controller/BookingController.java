@@ -21,6 +21,11 @@ public class BookingController {
 
     @PostMapping("")
     public boolean createBooking(@RequestBody CreateBookingDTO createBookingDTO) {
+        System.out.println("----------------");
+        System.out.println(createBookingDTO.getArrival());
+        System.out.println(createBookingDTO.getDeparture());
+        System.out.println(createBookingDTO.getNumberOfGuests());
+        System.out.println(createBookingDTO.getPassportNumber());
         logger.info("createBooking - called");
         return bookingService.createBooking(createBookingDTO);
     }
