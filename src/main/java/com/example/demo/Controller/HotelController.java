@@ -27,11 +27,5 @@ public class HotelController {
         this.hotelService = hotelService;
         logger.info("Constructor called");
     }
-
-    @GetMapping("")
-    public Collection<HotelDTO> findVacantHotels(@RequestBody String city, Date date, int numberOfGuests) {
-        logger.info("findVacantRooms called");
-        var vacantHotelsDTO = new VacantHotelsDTO(city, date, numberOfGuests);
-        return hotelService.findVacantHotels(vacantHotelsDTO);
-    }
+    
 }
