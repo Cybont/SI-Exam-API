@@ -29,6 +29,8 @@ public class BookingService implements BookingUtility {
 
     @Override
     public boolean createBooking(CreateBookingDTO createBookingDTO) {
+
+
         logger.info("createBooking - called");
         ResponseEntity<Boolean> response = restTemplate.postForEntity(URLs.BACKEND_URL + "booking", createBookingDTO, Boolean.class);
         logger.info("createBooking - response received with statuscode: " + response.getStatusCode());
